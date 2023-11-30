@@ -1,6 +1,5 @@
 using System.Collections;
 using Core.Scripts.Bot.Zombie;
-using Core.Scripts.Enums;
 using UnityEngine;
 using Zenject;
 

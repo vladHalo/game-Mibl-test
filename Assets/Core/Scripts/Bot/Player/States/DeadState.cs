@@ -1,8 +1,6 @@
 using System.Collections;
 using Core.Scripts.Interfaces;
 using Core.Scripts.Bot.Player.Models;
-using Core.Scripts.Enums;
-using Sirenix.Utilities;
 using UnityEngine;
 
 namespace Core.Scripts.Bot.Player.States
@@ -13,19 +11,21 @@ namespace Core.Scripts.Bot.Player.States
 
         private readonly Bot _bot;
         private readonly DeadModel _deadModel;
+        private readonly GameManager _gameManager;
 
-        public DeadState(PlayerStateManager player, Bot bot, DeadModel deadModel)
+        public DeadState(PlayerStateManager player, Bot bot, DeadModel deadModel, GameManager gameManager)
         {
             _player = player;
             _bot = bot;
             _deadModel = deadModel;
+            _gameManager = gameManager;
         }
 
         public void EnterState()
         {
             AudioManager.instance.PlaySoundEffect(SoundType.DeadMan);
             _bot.Dead();
-            _player.gameManager.ChangeStatusGame(StatusGame.Stop);
+            _gameManager.ChangeStatusGame(StatusGame.Stop);
             _player.StartCoroutine(Lose());
         }
 
@@ -41,7 +41,7 @@ namespace Core.Scripts.Bot.Player.States
         {
         }
 
-        public IEnumerator Lose()
+        private IEnumerator Lose()
         {
             yield return new WaitForSeconds(2);
             _deadModel.actionPanelManager.OpenPanels(0);

@@ -15,14 +15,14 @@ namespace Core.Scripts.Bot.Player
         [SerializeField] private MoveModel _moveModel;
         [SerializeField] private DeadModel _deadModel;
 
+        [Inject] private GameManager _gameManager;
         private IStatePlayer _currentState;
-        [Inject] public GameManager gameManager;
 
         private void Start()
         {
             _bot.IsKinematic(true);
             moveState = new MoveState(this, _bot, _moveModel);
-            deadState = new DeadState(this, _bot, _deadModel);
+            deadState = new DeadState(this, _bot, _deadModel, _gameManager);
             _currentState = moveState;
         }
 

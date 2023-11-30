@@ -1,4 +1,3 @@
-using Core.Scripts.Enums;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;

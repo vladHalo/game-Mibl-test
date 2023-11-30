@@ -1,4 +1,3 @@
-using Core.Scripts.Enums;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour

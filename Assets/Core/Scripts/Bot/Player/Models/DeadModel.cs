@@ -1,6 +1,5 @@
 using System;
 using Core.Scripts.Views;
-using UnityEngine;
 
 namespace Core.Scripts.Bot.Player.Models
 {

@@ -11,6 +11,7 @@ namespace Core.Scripts.Bot
         public Animator animator;
         public Rigidbody rigidbody;
         public ParticleSystem[] particlesDead;
+
         [SerializeField] private Rigidbody[] rigidbodies;
 
         public void IsKinematic(bool enable)

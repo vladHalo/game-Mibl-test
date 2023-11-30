@@ -1,7 +1,6 @@
 using Core.Scripts.Interfaces;
 using Core.Scripts.Bot.Player.Models;
 using Core.Scripts.Bot.Zombie;
-using Core.Scripts.FactoryBomb;
 using UnityEngine;
 
 namespace Core.Scripts.Bot.Player.States
@@ -27,9 +26,8 @@ namespace Core.Scripts.Bot.Player.States
 
         public void FinishState()
         {
-            
         }
-        
+
         public void FixedUpdateState()
         {
             Vector3 moveVector = new Vector3(_moveModel.joystick.Horizontal, 0, _moveModel.joystick.Vertical);

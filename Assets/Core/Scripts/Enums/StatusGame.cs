@@ -1,8 +1,5 @@
-namespace Core.Scripts.Enums
+public enum StatusGame
 {
-    public enum StatusGame
-    {
-        Stop,
-        Play
-    }
+    Stop,
+    Play
 }

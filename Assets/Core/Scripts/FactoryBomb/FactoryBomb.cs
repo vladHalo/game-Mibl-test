@@ -1,5 +1,4 @@
 using System.Collections;
-using Core.Scripts.Enums;
 using UnityEngine;
 using Zenject;
 

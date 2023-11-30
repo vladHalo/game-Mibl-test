@@ -9,6 +9,6 @@ namespace Core.Scripts.Bot.Zombie.Models
     {
         public NavMeshAgent agent;
         public CapsuleCollider collider;
-        public Transform target;
+        [HideInInspector] public Transform target;
     }
 }
