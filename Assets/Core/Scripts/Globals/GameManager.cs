@@ -1,9 +1,10 @@
+using Core.Scripts.Enums;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Button _startBtn;
-
+    public Transform player;
     public StatusGame statusGame;
+
+    public void ChangeStatusGame(StatusGame status) => statusGame = status;
 }

@@ -1,17 +1,23 @@
+using Core.Scripts.Enums;
 using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Core.Scripts.Views
 {
     public class ViewManager : MonoBehaviour
     {
+        [SerializeField] private Button _startButton;
         [SerializeField] private Button _pauseButton;
         [SerializeField] private Button[] _restartButtons;
 
+        [Inject] private GameManager _gameManager;
+
         private void Start()
         {
+            _startButton.onClick.AddListener(() => { _gameManager.ChangeStatusGame(StatusGame.Play); });
             _pauseButton.onClick.AddListener(PauseLevel);
             _restartButtons.ForEach(x => x.onClick.AddListener(RestartLevel));
         }
@@ -23,7 +29,6 @@ namespace Core.Scripts.Views
 
         private void RestartLevel()
         {
-            Time.timeScale = 1;
             SceneManager.LoadScene(Str.Main);
         }
     }
