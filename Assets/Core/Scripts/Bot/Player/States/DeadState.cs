@@ -23,6 +23,7 @@ namespace Core.Scripts.Bot.Player.States
 
         public void EnterState()
         {
+            AudioManager.instance.PlaySoundEffect(SoundType.DeadMan);
             _bot.Dead();
             _player.gameManager.ChangeStatusGame(StatusGame.Stop);
             _player.StartCoroutine(Lose());
@@ -30,7 +31,6 @@ namespace Core.Scripts.Bot.Player.States
 
         public void FinishState()
         {
-            
         }
 
         public void FixedUpdateState()

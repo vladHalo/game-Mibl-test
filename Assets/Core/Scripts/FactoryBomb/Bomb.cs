@@ -53,6 +53,7 @@ namespace Core.Scripts.FactoryBomb
                 yield return new WaitForSeconds(.5f);
             }
 
+            AudioManager.instance.PlaySoundEffect(SoundType.Bomb);
             _particle.Play();
             _zombies.ForEach(x => x.SetState(x.deadState));
             LeanPool.Despawn(gameObject, .4f);
